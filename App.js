@@ -1,8 +1,9 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { NativeBaseProvider, extendTheme } from "native-base";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
-import ReactRouter from "./router/ReactRouter";
+import Navigator from "./router/Navigator";
 
 // Define the config
 const config = {
@@ -17,7 +18,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NativeBaseProvider>
-        <ReactRouter />
+        <Navigator />
       </NativeBaseProvider>
     </Provider>
   );

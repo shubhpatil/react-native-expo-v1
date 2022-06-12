@@ -10,14 +10,12 @@ import {
 import NativeBaseIcon from "../../components/NativeBaseIcon";
 import DarkMode from "../../components/Dark Mode/DarkMode";
 import { Platform } from "react-native";
-import { useNavigate } from "react-router-native";
 import { useSelector, useDispatch } from "react-redux";
 import { setIncrementCounter } from "../../redux/AppReducer";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const appRedux = useSelector((state) => state.app);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   return (
     <Center
@@ -50,7 +48,7 @@ const Home = () => {
         <Button onPress={() => dispatch(setIncrementCounter())}>
           {"Counter " + appRedux.counter}
         </Button>
-        <Button onPress={() => navigate("/about")}>Goto About</Button>
+        <Button onPress={() => navigation.navigate("About")}>Goto About</Button>
         <DarkMode />
       </VStack>
     </Center>
