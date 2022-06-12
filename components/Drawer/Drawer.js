@@ -28,8 +28,8 @@ const Drawer = () => {
       </ImageBackground>
 
       {/* User Name */}
-      {/* <Text style={{fontWeight: 'bold', marginTop:50}} >{ username }</Text>
-                <Text style={{fontWeight: 'bold'}} >{ email }</Text> */}
+      <Text style={{ fontWeight: "bold", marginTop: 50 }}>DX</Text>
+      {/* <Text style={{fontWeight: 'bold'}} >{ email }</Text> */}
     </View>
   );
 };
