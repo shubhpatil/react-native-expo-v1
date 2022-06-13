@@ -8,7 +8,6 @@ import {
   Button,
 } from "native-base";
 import NativeBaseIcon from "../../components/NativeBaseIcon";
-import DarkMode from "../../components/Dark Mode/DarkMode";
 import { Platform } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
 import { setIncrementCounter } from "../../redux/AppReducer";
@@ -26,9 +25,9 @@ const Home = ({ navigation }) => {
     >
       <VStack space={5} alignItems="center">
         <NativeBaseIcon />
-        <Heading size="lg">Welcome to NativeBase</Heading>
+        <Heading size="lg">Welcome to React Native</Heading>
         <HStack space={2} alignItems="center">
-          <Text>Edit DX</Text>
+          <Text>Edit</Text>
           <Box
             _web={{
               _text: {
@@ -49,7 +48,6 @@ const Home = ({ navigation }) => {
           {"Counter " + appRedux.counter}
         </Button>
         <Button onPress={() => navigation.navigate("About")}>Goto About</Button>
-        <DarkMode />
       </VStack>
     </Center>
   );

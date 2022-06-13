@@ -1,10 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import {
-  createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from "@react-navigation/drawer";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 // import { createStackNavigator } from "@react-navigation/stack";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import DrawerComponent from "../components/Drawer/Drawer";
@@ -17,25 +12,13 @@ import About from "../pages/About/About";
 const Drawer = createDrawerNavigator();
 // const Stack = createStackNavigator();
 
-// Custom Drawer
-const CustomDrawerContent = (props) => {
-  const { navigation } = props;
-  return (
-    <DrawerContentScrollView {...props}>
-      <DrawerComponent />
-      <DrawerItemList {...props} />
-      <DrawerItem label="Help" onPress={() => navigation.navigate("About")} />
-    </DrawerContentScrollView>
-  );
-};
-
 // Drawer Navigator
 const MyDrawer = () => {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
       backBehavior="history"
-      drawerContent={(props) => <CustomDrawerContent {...props} />}
+      drawerContent={(props) => <DrawerComponent {...props} />}
       screenOptions={{
         drawerType: "front", // "slide"
         swipeEnabled: true,
@@ -51,7 +34,15 @@ const MyDrawer = () => {
           ),
         }}
       />
-      <Drawer.Screen name="About" component={About} />
+      <Drawer.Screen
+        name="About"
+        component={About}
+        options={{
+          drawerIcon: ({ color, size }) => (
+            <Icon name="face" size={size} color={color} />
+          ),
+        }}
+      />
     </Drawer.Navigator>
   );
 };

@@ -1,5 +1,5 @@
-import { View } from "react-native";
-import { Text, Button } from "native-base";
+import { View, Text } from "react-native";
+import { Button } from "native-base";
 
 const About = ({ navigation }) => {
   return (

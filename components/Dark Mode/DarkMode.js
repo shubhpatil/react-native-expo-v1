@@ -2,17 +2,15 @@ import { Text, HStack, Switch, useColorMode } from "native-base";
 
 const DarkMode = () => {
   const { colorMode, toggleColorMode } = useColorMode();
+
   return (
-    <HStack space={2} alignItems="center">
-      <Text>Dark</Text>
+    <HStack px={5} my={5} alignItems="center">
+      <Text color="light.600">Darkmode</Text>
       <Switch
-        isChecked={colorMode === "light"}
+        ml="auto"
+        isChecked={colorMode !== "light"}
         onToggle={toggleColorMode}
-        aria-label={
-          colorMode === "light" ? "switch to dark mode" : "switch to light mode"
-        }
       />
-      <Text>Light</Text>
     </HStack>
   );
 };
